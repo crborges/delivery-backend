@@ -21,7 +21,7 @@ public class ProductService {
 	
 	@Transactional(readOnly = true)
 	public List<ProductDTO> listar(){
-		List<Product> list= productRepository.findAllByOrderBynameAsc();
+		List<Product> list = productRepository.findAllByOrderByNameAsc();
 		return list.stream().map(x -> new ProductDTO(x)).collect(Collectors.toList());
 	}
 	
